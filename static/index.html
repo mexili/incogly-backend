@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Welcome
+    <video id="vd" src=""></video>
+    <script>
+      const vid = document.getElementById("vd");
+      navigator.mediaDevices
+        .getUserMedia({
+          video: true,
+          audio: true,
+        })
+        .then((stream) => {
+          addVideoStream(vid, stream);
+        });
+      function addVideoStream(video, stream) {
+        video.srcObject = stream;
+        video.addEventListener("loadedmetadata", () => {
+          video.play();
+        });
+      }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      socket = io();
+      socket.emit("custom_event", {
+        name: "sanyam",
+      });
+    </script>
+  </body>
+</html>
