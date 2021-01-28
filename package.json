@@ -1,0 +1,37 @@
+{
+  "name": "incogly-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mexili/incogly-backend.git"
+  },
+  "author": "AJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mexili/incogly-backend/issues"
+  },
+  "homepage": "https://github.com/mexili/incogly-backend#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "xss": "^1.0.8"
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.2"
+  }
+}
