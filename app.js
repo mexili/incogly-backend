@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
+const { ExpressPeerServer } = require("peer");
 
 const middleware = require("./utils/middleware");
 
@@ -13,6 +14,8 @@ app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
 require("./conference")(server);
+
+app.get("/", (req, res, next) => res.send("Hello world!"));
 
 if (module === require.main) {
   const PORT = process.env.PORT || 5000;
